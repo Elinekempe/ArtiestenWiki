@@ -1,8 +1,6 @@
 # 🎵 ArtiestenWiki 🎵
 
-ArtiestenWiki is een client-side webapp (HTML + vanilla JavaScript + Tailwind CSS) voor het verkennen van artiesten, albums en hun populairste nummers.
-Alle gegevens zijn statisch opgeslagen in JSON, geen backend nodig.
-
+### ArtiestenWiki is een website die informatie geeft over artiesten. Je kunt zoeken, filteren en details bekijken van verschillende artiesten. Deze README geeft een overzicht van de projectstructuur en hoe je nieuwe artiesten kunt toevoegen of de website kunt uitbreiden.
 ---
 
 
@@ -68,12 +66,6 @@ ArtiestenWiki/
 1. Plaats PNG/JPG in `images/` folder.
 2. Zet `afbeelding_url: "images/mijnfoto.jpg"` in artiest-object.
 
-### Velden uitbreiden
-
-- Voeg veld toe aan `artists.json` en artiest-object.
-- Update `cards.js` om veld te renderen (bijv. in banner of inhoud).
-- Update `detail-render.js` en eventueel `detail-main.js` voor detail-pagina.
-
 ### Debugging
 
 - Open browser DevTools (F12).
@@ -85,7 +77,8 @@ ArtiestenWiki/
 ##  Snelstart
 
 1. Open project in VS Code.
-2. Installeer extensie **Live Server** (Ritwick Dey).
-3. Klik **Go Live** → browser opent automatisch op `http://localhost:5500/index.html`.
+2. Clone github repository in VS code. 
+3. Rechtermuisklik op `index.html`.
+3. Klik **Go Live** bovenaan.
 
 **Klaar!** 
