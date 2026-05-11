@@ -1,5 +1,4 @@
-// ---- DEEL 4: MAAK ÉÉN REGEL IN EEN LIJST ----
-// type is "album" (dan CD icoon) of "hit" (dan ster icoon)
+// maakt een list item voor een album of hit
 function maakLijstItem(item, type) {
     // Maak een list item (<li>)
     let li = document.createElement('li');
@@ -25,7 +24,7 @@ function maakLijstItem(item, type) {
     return li;
 }
 
-// ---- DEEL 5: VUL ALLE DETAILS IN DE PAGINA ----
+// vult de detailpagina met alle gegevens van de artiest
 function vulDetailIn(artiest) {
     // 5.1: FOTO
     let foto = document.getElementById('detailFoto');
@@ -33,7 +32,7 @@ function vulDetailIn(artiest) {
         foto.src = artiest.afbeelding_url;
         foto.alt = artiest.naam;
     } else {
-        foto.style.display = 'none';  // Geen foto? Verstop hem
+        foto.style.display = 'none';  // Geen foto? Verberg het <img> element helemaal.
     }
     
     // 5.2: BASIS GEGEVENS

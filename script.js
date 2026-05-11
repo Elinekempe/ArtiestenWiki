@@ -34,7 +34,6 @@ function toonGeenResultaten() {
     artiestenRaster.append(leegBericht);
 }
 
-// ---- STAP 4B: SORTEER-FUNCTIES ----
 // ---- STAP 5: Laad artiesten uit het bestand  ----
 function laadArtiestenUitBestand() {
     fetch('artists.json')

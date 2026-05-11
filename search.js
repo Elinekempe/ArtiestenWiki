@@ -1,6 +1,4 @@
-// ---- ZOEK-FUNCTIE ----
-// Deze functie filtert artiesten op basis van zoekterm
-
+// Filter functie 
 function initSearch(alleArtiesten) {
     const zoekVak = document.getElementById('zoekInput');
     

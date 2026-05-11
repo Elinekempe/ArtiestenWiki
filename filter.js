@@ -1,4 +1,4 @@
-// ---- ZOEK-FUNCTIE ----
+// Zoek functie
 function initSearch(alleArtiesten) {
     const zoekVak = document.getElementById('zoekInput');
     

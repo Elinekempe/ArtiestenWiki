@@ -1,4 +1,4 @@
-// ---- DEEL 7: HOOFDFUNCTIE (start alles) ----
+// Start alles 
 function laadDetail() {
     // Stap 1: Pak ID uit URL
     let id = getArtistId();

@@ -1,11 +1,11 @@
-// Bijvoorbeeld: detail.html?id=5  →  haalt "5" eruit
+// Pakt artiest bij ID 
 function getArtistId() {
     let urlDeel = window.location.search;  // Dit is "?id=5"
     let zoekParams = new URLSearchParams(urlDeel);  // Maak er iets van waar we mee kunnen werken
     return zoekParams.get('id');  // Pak de waarde van "id" (bijv. "5")
 }
 
-// ---- DEEL 2: LAAD ALLE ARTISTEN ----
+// Laat alle artiesten zien
 function laadArtiestenData() {
     // Haal het bestand op
     let antwoord = fetch('artists.json');
@@ -21,7 +21,7 @@ function laadArtiestenData() {
     });
 }
 
-// ---- DEEL 3: ZOEK ARTIEST OP ID ----
+// vind artiest in de lijst op basis van ID
 function vindArtiestById(artiesten, id) {
     // Loop door alle artiesten heen
     for (let i = 0; i < artiesten.length; i++) {
