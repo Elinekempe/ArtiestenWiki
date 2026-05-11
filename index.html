@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artiesten Wiki</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-950 min-h-screen">
+
+<div class="max-w-7xl mx-auto px-4 py-10">
+
+  <header class="bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500 rounded-3xl shadow-2xl p-8 md:p-12 mb-12 border border-violet-400/20 backdrop-blur">
+    <div class="flex items-center gap-4 mb-4">
+      <div class="h-16 w-16 rounded-2xl bg-white/15 text-white flex items-center justify-center text-3xl backdrop-blur-xl border border-white/20">
+        <i class="fas fa-compact-disc"></i>
+      </div>
+      <div>
+        <h1 class="text-5xl md:text-6xl font-black text-white">ArtiestenWiki</h1>
+        <p class="text-violet-100 text-sm font-semibold mt-2 tracking-wide">Ontdek de wereld van muziek</p>
+      </div>
+    </div>
+    <p class="text-white/90 text-lg leading-relaxed font-medium">Duizenden artiesten, albums en hun meest populaire nummers op één plek.</p>
+  </header>
+
+  <!-- Zoeksectie -->
+  <section class="bg-gradient-to-r from-cyan-600 via-blue-600 to-violet-600 rounded-3xl shadow-2xl p-7 md:p-10 mb-12 border border-cyan-400/20 backdrop-blur">
+    <label for="zoekInput" class="block text-white font-bold mb-4 text-lg flex items-center gap-2"><i class="fas fa-search"></i> Zoek naar artiesten</label>
+    <div class="relative">
+      <i class="fas fa-sparkles absolute left-4 top-1/2 -translate-y-1/2 text-white/40 text-lg"></i>
+      <input type="text" id="zoekInput" placeholder="Bijv. Beyoncé, Taylor Swift, K-Pop..."
+             class="w-full pl-14 pr-5 py-4 rounded-2xl border-2 border-white/20 bg-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white placeholder-white/50 font-medium transition">
+    </div>
+    <p id="resultCount" class="text-white/80 text-sm mt-4 font-medium">0 artiesten gevonden</p>
+  </section>
+
+  <!-- Sorteer-knoppen -->
+  <div class="flex flex-wrap gap-3 mb-8 justify-center">
+    <button id="sortNaam" class="px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-2xl font-bold transition shadow-lg hover:shadow-xl">
+      <i class="fas fa-arrow-up-a-z mr-2"></i>Naam (A-Z)
+    </button>
+    <button id="sortGenre" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-2xl font-bold transition backdrop-blur">
+      <i class="fas fa-music mr-2"></i>Genre
+    </button>
+    <button id="sortLand" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-2xl font-bold transition backdrop-blur">
+      <i class="fas fa-globe mr-2"></i>Land
+    </button>
+    <button id="sortJaren" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-2xl font-bold transition backdrop-blur">
+      <i class="fas fa-calendar mr-2"></i>Jaren actief
+    </button>
+  </div>
+
+  <div id="artiestenGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7"></div>
+
+</div>
+
+<script src="makeElement.js"></script>
+  <script src="filter.js"></script>
+<script src="cards.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

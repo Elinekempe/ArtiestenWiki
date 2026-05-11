@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artiest Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-950 min-h-screen">
+
+<div class="max-w-4xl mx-auto px-4 py-10">
+
+  <a href="index.html" class="inline-flex items-center gap-2 text-violet-300 hover:text-violet-100 mb-8 font-semibold transition duration-300 text-lg">
+    <i class="fas fa-chevron-left"></i> Terug naar alle artiesten
+  </a>
+
+  <div id="detailContainer" class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/10">
+
+    <div id="detailHeader" class="relative bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 p-8 md:p-12 text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-fuchsia-300 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-12">
+        <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 group">
+          <div class="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 ring-4 ring-white/10 group-hover:ring-white/30 transition-all duration-500">
+            <img id="detailFoto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="" alt="Artiest foto">
+          </div>
+        </div>
+        
+        <div class="text-center md:text-left flex-1">
+          <h1 id="detailNaam" class="text-5xl md:text-7xl font-black mb-3 leading-tight"></h1>
+          <p id="detailEchteNaam" class="text-violet-100 text-lg md:text-xl font-semibold mb-6"></p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-bold"><span id="detailGenreQuick"></span></span>
+            <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-bold"><span id="detailLandQuick"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-8 md:p-12 space-y-8">
+
+      <div class="bg-gradient-to-br from-slate-600/15 via-slate-600/10 to-slate-600/5 rounded-3xl p-8 md:p-10 border border-slate-400/20 backdrop-blur shadow-xl hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center">
+            <i class="fas fa-book text-white text-lg"></i>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-black text-white">Biografie</h2>
+        </div>
+        <p id="detailBio" class="text-white/85 leading-relaxed font-medium text-lg"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-slate-600/15 via-slate-600/10 to-slate-600/5 rounded-3xl p-8 md:p-10 border border-slate-400/20 backdrop-blur shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center">
+              <i class="fas fa-music text-white text-lg"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-white">Albums</h2>
+          </div>
+          <ul id="detailAlbums" class="artist-list space-y-3"></ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-slate-600/15 via-slate-600/10 to-slate-600/5 rounded-3xl p-8 md:p-10 border border-slate-400/20 backdrop-blur shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center">
+              <i class="fas fa-star text-white text-lg"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-white">Grootste hits</h2>
+          </div>
+          <ul id="detailHits" class="artist-list space-y-3"></ul>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-gradient-to-br from-slate-600/10 to-slate-600/5 rounded-2xl p-6 border border-slate-400/15 backdrop-blur">
+          <p class="text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">🌍 Land</p>
+          <p id="detailLand" class="text-white font-black text-lg"></p>
+        </div>
+        <div class="bg-gradient-to-br from-slate-600/10 to-slate-600/5 rounded-2xl p-6 border border-slate-400/15 backdrop-blur">
+          <p class="text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">📅 Actief</p>
+          <p id="detailJaren" class="text-white font-black text-lg"></p>
+        </div>
+        <div class="bg-gradient-to-br from-slate-600/10 to-slate-600/5 rounded-2xl p-6 border border-slate-400/15 backdrop-blur">
+          <p class="text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">🎸 Genre</p>
+          <p id="detailGenre" class="text-white font-black text-lg"></p>
+        </div>
+        <div class="bg-gradient-to-br from-slate-600/10 to-slate-600/5 rounded-2xl p-6 border border-slate-400/15 backdrop-blur">
+          <p class="text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">🎂 Geboren</p>
+          <p id="detailGeboren" class="text-white font-black text-lg"></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-br from-slate-600/15 via-slate-600/10 to-slate-600/5 rounded-3xl p-8 md:p-10 border border-slate-400/20 backdrop-blur shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center">
+              <i class="fas fa-trophy text-white text-lg"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-white">Awards</h2>
+          </div>
+          <p id="detailAwards" class="text-white/85 leading-relaxed font-medium"></p>
+        </div>
+        <div class="bg-gradient-to-br from-slate-600/15 via-slate-600/10 to-slate-600/5 rounded-3xl p-8 md:p-10 border border-slate-400/20 backdrop-blur shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center">
+              <i class="fas fa-tag text-white text-lg"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-white">Platenlabels</h2>
+          </div>
+          <p id="detailLabels" class="text-white/85 leading-relaxed font-medium"></p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4">
+        <a id="detailWebsite" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 hover:from-violet-500 hover:via-purple-500 hover:to-fuchsia-500 text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 font-bold text-lg group" href="" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-globe group-hover:scale-110 transition-transform duration-300"></i> Bezoek officiële website
+        </a>
+        <a href="index.html" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 font-bold text-lg">
+          <i class="fas fa-arrow-left"></i> Terug
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="detail.js"></script>
+<script src="detail-render.js"></script>
+<script src="detail-error.js"></script>
+<script src="detail-main.js"></script>
+</body>
+</html>
